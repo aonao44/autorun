@@ -46,8 +46,10 @@ def detect_updates():
             return True
 
 # スケジュールの登録
-schedule.every(3).seconds.do(detect_updates)
+schedule.every(1).days.do(detect_updates)
 
 while True:
     schedule.run_pending()
     sleep(1)
+    
+'hjXiOf7HvJkhDmUSy870QFEjJZE62uz7FNbGPwguWmi'
