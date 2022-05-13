@@ -64,16 +64,18 @@ def detect_updates():
     # 34で取得した文字列とtxtファイル内の文字列を比較する
     # 同==[変化なし],異==[更新内容をtxtに書き込む]
     if new_check_ele == comp_check_ele:
+        # line_notify関数の呼び出し
         line_notify(sinamon_flover,stock_status)
         return False
     else:
         with open(comp_path_file, 'w') as f:
             f.write(new_check_ele)
-            print('更新しました')
+            # line_notify関数の呼び出し
+            line_notify(sinamon_flover,stock_status)
             return True
 
 
-# スケジュールの登録/実行
+# スケジュールの登録/実行.do
 schedule.every(5).seconds.do(detect_updates)
 while True:
     schedule.run_pending()
