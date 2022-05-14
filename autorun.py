@@ -1,6 +1,5 @@
 import os
 import re
-from this import d
 
 import schedule
 from time import sleep
