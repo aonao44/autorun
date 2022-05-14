@@ -75,9 +75,11 @@ def detect_updates():
 
 
 # スケジュールの登録/実行.do
-schedule.every().day.at("10:00").do(detect_updates)
-schedule.every().day.at("13:00").do(detect_updates)
-schedule.every().day.at("17:00").do(detect_updates)
+# schedule.every(5).seconds.do(detect_updates)
+schedule.every(1).day.at("10:00").do(detect_updates)
+schedule.every(1).day.at("13:00").do(detect_updates)
+schedule.every(1).day.at("17:42").do(detect_updates)
+
 while True:
     schedule.run_pending()
     sleep(1)
