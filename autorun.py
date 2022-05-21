@@ -50,7 +50,6 @@ def detect_updates():
     fold_path = os.path.dirname(os.path.abspath(__file__))
     # textファイルをフォルダのパスごと変数に入れておく
     comp_path_file = os.path.join(fold_path, 'comp_chek.txt')
-    new_path_file = os.path.join(fold_path, 'new_check.txt')
 
     try:
         # フォルダのパス込みのファイル名を読み込む
@@ -76,9 +75,9 @@ def detect_updates():
 
 # スケジュールの登録/実行.do
 # schedule.every(5).seconds.do(detect_updates)
-schedule.every(1).day.at("10:00").do(detect_updates)
-schedule.every(1).day.at("13:00").do(detect_updates)
-schedule.every(1).day.at("17:42").do(detect_updates)
+schedule.every().day.at("08:05").do(detect_updates)
+schedule.every().day.at("12:10").do(detect_updates)
+schedule.every().day.at("17:15").do(detect_updates)
 
 while True:
     schedule.run_pending()
